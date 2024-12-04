@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--modern-normalize -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
@@ -10,16 +11,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!--Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <!--style -->
     <link href="./css/styles.css" rel="stylesheet" />
     <title>WebStudio</title>
   </head>
   <body>
+    <!--Header -->
     <header class="header-page">
       <div class="container header-container">
         <nav class="header-nav">
@@ -58,15 +62,17 @@
       </div>
     </header>
     <main>
-      <section class="section section-first">
+      <!--Section Hero -->
+      <section class="section section-hero">
         <div class="container">
           <h1 class="title">Effective Solutions for Your Business</h1>
-          <button type="button" class="button-first" data-modal-open>
+          <button type="button" class="button-hero" data-modal-open>
             Order Service
           </button>
         </div>
       </section>
-      <section class="section section-second">
+      <!--section Priority -->
+      <section class="section section-priority">
         <div class="container">
           <h2 class="visually-hidden">Priority</h2>
           <ul class="priority-list">
@@ -121,12 +127,18 @@
           </ul>
         </div>
       </section>
-      <section class="section section-third">
+      <!--section Our Team -->
+      <section class="section section-team">
         <div class="container">
           <h2 class="title">Our Team</h2>
           <ul class="team-list">
             <li class="team-item">
               <img
+                class="team-img"
+                srcset="
+                  ./images/markguerrero.jpg   1x,
+                  ./images/markguerrero@2.jpg 2x
+                "
                 src="./images/markguerrero.jpg"
                 alt="Product Designer"
                 width="264"
@@ -187,6 +199,8 @@
             </li>
             <li class="team-item">
               <img
+                class="team-img"
+                srcset="./images/tomford.jpg 1x, ./images/tomford@2.jpg 2x"
                 src="./images/tomford.jpg"
                 alt="Frontend Developer"
                 width="264"
@@ -247,6 +261,11 @@
             </li>
             <li class="team-item">
               <img
+                class="team-img"
+                srcset="
+                  ./images/camilagarcia.jpg   1x,
+                  ./images/camilagarcia@2.jpg 2x
+                "
                 src="./images/camilagarcia.jpg"
                 alt="Marketing"
                 width="264"
@@ -307,6 +326,11 @@
             </li>
             <li class="team-item">
               <img
+                class="team-img"
+                srcset="
+                  ./images/danielwilson.jpg   1x,
+                  ./images/danielwilson@2.jpg 2x
+                "
                 src="./images/danielwilson.jpg"
                 alt="UI Designer"
                 width="264"
@@ -368,18 +392,45 @@
           </ul>
         </div>
       </section>
-      <section class="section section-fourth">
+      <!--section Our Portfolio -->
+      <section class="section section-portfolio">
         <div class="container">
           <h2 class="title">Our Portfolio</h2>
           <ul class="portfolio-list">
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/bankingapp.jpg"
-                  alt="bankingapp"
-                  width="360"
-                  height="300"
-                />
+                <picture>
+                  <!--Destkop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/bankingapp.jpg   1x,
+                      ./images/bankingapp@2.jpg 2x
+                    "
+                  />
+                  <!--tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/bankingapp_tablet.jpg   1x,
+                      ./images/bankingapp_tablet@2.jpg 2x
+                    "
+                  />
+                  <!--mobile -->
+                  <source
+                    media="(min-width: 320px)"
+                    srcset="
+                      ./images/bankingapp_mobil.jpg   1x,
+                      ./images/bankingapp_mobil@2.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/bankingapp.jpg"
+                    alt="bankingapp"
+                    width="360"
+                    height="300"
+                  />
+                </picture>
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -393,12 +444,38 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/cashlesspayment.jpg"
-                  alt="bankingapp"
-                  width="360"
-                  height="300"
-                />
+                <picture>
+                  <!--Destkop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/cashlesspayment.jpg   1x,
+                      ./images/cashlesspayment@2.jpg 2x
+                    "
+                  />
+                  <!--tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/cashlesspayment_tablet.jpg   1x,
+                      ./images/cashlesspayment_tablet@2.jpg 2x
+                    "
+                  />
+                  <!--mobile -->
+                  <source
+                    media="(min-width: 320px)"
+                    srcset="
+                      ./images/cashlesspayment_mobil.jpg   1x,
+                      ./images/cashlesspayment_mobil@2.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/cashlesspayment.jpg"
+                    alt="bankingapp"
+                    width="360"
+                    height="300"
+                  />
+                </picture>
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -412,12 +489,38 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/meditationapp.jpg"
-                  alt="bankingapp"
-                  width="360"
-                  height="300"
-                />
+                <picture>
+                  <!--Destkop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/meditationapp.jpg   1x,
+                      ./images/meditationapp@2.jpg 2x
+                    "
+                  />
+                  <!--tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/meditationapp_tablet.jpg   1x,
+                      ./images/meditationapp_tablet@2.jpg 2x
+                    "
+                  />
+                  <!--mobile -->
+                  <source
+                    media="(min-width: 320px)"
+                    srcset="
+                      ./images/meditationapp_mobil.jpg   1x,
+                      ./images/meditationapp_mobil@2.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/meditationapp.jpg"
+                    alt="meditationapp"
+                    width="360"
+                    height="300"
+                  />
+                </picture>
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -431,12 +534,38 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/taxiservice.jpg"
-                  alt="bankingapp"
-                  width="360"
-                  height="300"
-                />
+                <picture>
+                  <!--Destkop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/taxiservice.jpg   1x,
+                      ./images/taxiservice@2.jpg 2x
+                    "
+                  />
+                  <!--tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/taxiservice_tablet.jpg   1x,
+                      ./images/taxiservice_tablet@2.jpg 2x
+                    "
+                  />
+                  <!--mobile -->
+                  <source
+                    media="(min-width: 320px)"
+                    srcset="
+                      ./images/taxiservice_mobil.jpg   1x,
+                      ./images/taxiservice_mobil@2.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/taxiservice.jpg"
+                    alt="taxiservice"
+                    width="360"
+                    height="300"
+                  />
+                </picture>
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -450,12 +579,38 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/screenillustrations.jpg"
-                  alt="bankingapp"
-                  width="360"
-                  height="300"
-                />
+                <picture>
+                  <!--Destkop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/screenillustrations.jpg   1x,
+                      ./images/screenillustrations@2.jpg 2x
+                    "
+                  />
+                  <!--tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/screenillustrations_tablet.jpg   1x,
+                      ./images/screenillustrations_tablet@2.jpg 2x
+                    "
+                  />
+                  <!--mobile -->
+                  <source
+                    media="(min-width: 320px)"
+                    srcset="
+                      ./images/screenillustrations_mobil.jpg   1x,
+                      ./images/screenillustrations_mobil@2.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/screenillustrations.jpg"
+                    alt="screenillustrations"
+                    width="360"
+                    height="300"
+                  />
+                </picture>
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -469,12 +624,38 @@
             </li>
             <li class="portfolio-item">
               <div class="portfolio-wrapper">
-                <img
-                  src="./images/onlinecourses.jpg"
-                  alt="bankingapp"
-                  width="360"
-                  height="300"
-                />
+                <picture>
+                  <!--Destkop -->
+                  <source
+                    media="(min-width: 1158px)"
+                    srcset="
+                      ./images/onlinecourses.jpg   1x,
+                      ./images/onlinecourses@2.jpg 2x
+                    "
+                  />
+                  <!--tablet -->
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="
+                      ./images/onlinecourses_tablet.jpg   1x,
+                      ./images/onlinecourses_tablet@2.jpg 2x
+                    "
+                  />
+                  <!--mobile -->
+                  <source
+                    media="(min-width: 320px)"
+                    srcset="
+                      ./images/onlinecourses_mobil.jpg   1x,
+                      ./images/onlinecourses_mobil@2.jpg 2x
+                    "
+                  />
+                  <img
+                    src="./images/onlinecourses.jpg"
+                    alt="onlinecourses"
+                    width="360"
+                    height="300"
+                  />
+                </picture>
                 <p class="overlay">
                   14 Stylish and User-Friendly App Design Concepts · Task
                   Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App
@@ -490,6 +671,7 @@
         </div>
       </section>
     </main>
+    <!--Footer -->
     <footer class="footer-page">
       <div class="container footer-wrapper">
         <div class="footer-logo">
@@ -574,6 +756,7 @@
         </div>
       </div>
     </footer>
+    <!--modal -->
     <div class="backdrop" data-modal>
       <div class="modal">
         <button class="btn-close" type="button" data-modal-close>
@@ -661,6 +844,7 @@
         </form>
       </div>
     </div>
+    <!--mobile menu -->
     <div class="mobile-menu" data-mobil>
       <div class="container mobile-menu-container">
         <button
