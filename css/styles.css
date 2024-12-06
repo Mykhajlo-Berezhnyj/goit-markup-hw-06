@@ -148,7 +148,9 @@ li {
   .page-nav .link:hover,
   .page-nav .link:focus,
   .page-nav .link:active,
-  .page-nav .link.current {
+  .page-nav .link.current,
+  .nav-adress .link:hover,
+  .nav-adress .link:focus {
     color: #404bbf;
   }
 }
@@ -179,26 +181,38 @@ li {
     margin-left: auto;
   }
 
+  .adress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
   .nav-adress .link {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
     color: #434455;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: color;
   }
 
-  .nav-adress .link:hover,
-  .nav-adress .link:focus {
-    color: #404bbf;
-  }
   .nav-adress .link:active {
     color: #404bbf;
   }
 }
 
 @media screen and (min-width: 1158px) {
-  .adress-items {
-    display: flex;
+  .adress-list {
+    flex-direction: row;
     gap: 40px;
     margin-left: auto;
+  }
+  .nav-adress .link {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
   }
 }
 /* #endregion */
@@ -219,9 +233,7 @@ li {
 }
 
 .section-hero {
-  max-width: 1440px;
-  display: flex;
-  align-items: center;
+  max-width: 320px;
   padding-top: 72px;
   padding-bottom: 72px;
   background-color: #2e2f42;
@@ -246,6 +258,7 @@ li {
 
 @media screen and (min-width: 768px) {
   .section-hero {
+    max-width: 768px;
     padding-top: 112px;
     padding-bottom: 112px;
     background-image: linear-gradient(
@@ -257,7 +270,7 @@ li {
 }
 
 @media  screen and (min-width: 768px) and (min-resolution: 192dpi),
- (min-resolution: 2dppx){
+  screen and (min-width: 768px) and (min-resolution: 2dppx){
   .section-hero {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)),
@@ -267,6 +280,7 @@ li {
 
 @media screen and (min-width: 1158px) {
   .section-hero {
+    max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
     background-image: linear-gradient(
@@ -278,7 +292,7 @@ li {
 }
 
 @media screen and (min-width: 1158px) and (min-resolution: 192dpi),
-(min-resolution: 2dppx) {
+screen and (min-width: 1158px) and (min-resolution: 2dppx) {
   .section-hero {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)),
@@ -654,10 +668,18 @@ li {
 .footer-page {
   color: #f4f4fd;
   background-color: #2e2f42;
+  padding: 96px 0;
+  
+}
+
+@media screen and (min-width: 768px) {
+  .footer-page {}
+  padding: 96px 108px;
 }
 
 @media screen and (min-width: 1158px) {
   .footer-page {
+    padding: 100px 0;
   }
 }
 
@@ -667,7 +689,6 @@ li {
   align-items: center;
   justify-content: center;
   gap: 72px;
-  padding: 96px 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -677,7 +698,7 @@ li {
     align-items: start;
     gap: 72px 24px;
     justify-content: start;
-    padding: 96px 108px;
+    padding: 0 108px;
   }
 }
 
@@ -686,7 +707,7 @@ li {
     flex-wrap: nowrap;
     align-items: baseline;
     gap: 0;
-    padding: 100px 15px;
+    padding: 0 15px;
   }
 }
 
@@ -919,6 +940,7 @@ li {
 .modal {
   width: 408px;
   min-height: 584px;
+  padding: 72px 24px 24px 24px;
 }
 }
 
@@ -973,10 +995,6 @@ li {
 }
 
 .form-field {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
   margin-bottom: 8px;
 }
 
@@ -991,7 +1009,6 @@ li {
 }
 
 .input-wrapper {
-  display: flex;
   position: relative;
 }
 
@@ -1007,20 +1024,13 @@ li {
 .form-input {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  width: 256px;
+  width: 100%;
   height: 40px;
   padding-left: 34px;
   outline: transparent;
   background-color: transparent;
   transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: border-color;
-}
-
-@media screen and (min-width: 768px) {
-.form-input {
-  width: 360px;
-  height: 40px;
-}
 }
 
 .form-input:focus {
@@ -1038,7 +1048,7 @@ li {
 .input-textarea {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  width: 256px;
+  width: 100%;
   height: 120px;
   font-weight: 400;
   font-size: 12px;
@@ -1059,8 +1069,6 @@ li {
 
 @media screen and (min-width: 768px) {
 .input-textarea {
-  width: 360px;
-  height: 120px;
   padding: 8px 16px;
 }
 }
@@ -1186,12 +1194,17 @@ input[type='checkbox']:focus-visible
   fill: #2e2f42;
 }
 
+.mobile-nav {
+  display: flex;
+  margin-bottom: auto;
+}
+
 .mobile-menu-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  margin-bottom: auto;
 }
+
 
 .mobile-menu-item {
   font-weight: 700;
